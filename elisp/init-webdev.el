@@ -53,7 +53,7 @@
 
 ;; TypeScriptPac
 (use-package typescript-mode
-  :mode "\\.ts\\'"
+  :mode "\\.ts[x]\\'"
   :commands (typescript-mode))
 ;; -TypeScriptPac
 
