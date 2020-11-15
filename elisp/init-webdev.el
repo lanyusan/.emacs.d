@@ -46,9 +46,9 @@
 ;; -WebModePac
 
 ;; Js2Pac
-(use-package js2-mode
-  :mode "\\.js\\'"
-  :interpreter "node")
+;; (use-package js2-mode
+;;   :mode "\\.js\\'"
+;;   :interpreter "node")
 ;; -Js2Pac
 
 ;; TypeScriptPac
