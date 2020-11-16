@@ -184,17 +184,17 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 
 ;; Programming
 
-(require 'init-java)
+;; (require 'init-java)
 
-(require 'init-cc)
+;; (require 'init-cc)
 
 (require 'init-python)
 
-(require 'init-haskell)
+;; (require 'init-haskell)
 
 (require 'init-ess)
 
-(require 'init-latex)
+;; (require 'init-latex)
 
 (require 'init-buildsystem)
 
@@ -205,29 +205,29 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 (require 'init-js)
 
 ;; Miscellaneous
-(require 'init-org)
+;; (require 'init-org)
 
-(require 'init-eaf)
+;; (require 'init-eaf)
 
-(require 'init-erc)
+;; (require 'init-erc)
 
-(require 'init-eww)
+;; (require 'init-eww)
 
-(require 'init-mu4e)
+;; (require 'init-mu4e)
 
 (require 'init-tramp)
 
 (require 'init-pdf)
 
-(require 'init-leetcode)
+;; (require 'init-leetcode)
 
 (require 'init-input-method)
 
-(require 'init-debbugs)
+;; (require 'init-debbugs)
 
-(require 'init-epaint)
+;; (require 'init-epaint)
 
-(require 'init-games)
+;; (require 'init-games)
 
 (require 'init-zone)
 

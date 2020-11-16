@@ -51,6 +51,13 @@
 ;;   :interpreter "node")
 ;; -Js2Pac
 
+(use-package prettier-js
+  :diminish
+  :bind ("C-c C-p" . prettier-js)
+  :hook ((js-mode js2-mode json-mode web-mode css-mode sgml-mode html-mode typescript-mode)
+         .
+         prettier-js-mode))
+
 ;; TypeScriptPac
 (use-package typescript-mode
   :mode "\\.ts[x]\\'"
