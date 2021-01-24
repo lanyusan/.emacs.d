@@ -1,20 +1,20 @@
-;;; init-games.el --- -*- lexical-binding: t -*-
+;;; init-hackernews.el --- -*- lexical-binding: t -*-
 ;;
-;; Filename: init-games.el
-;; Description: Initialize Games
+;; Filename: init-hackernews.el
+;; Description: Initialize Hackernews
 ;; Author: Mingde (Matthew) Zeng
 ;; Copyright (C) 2019 Mingde (Matthew) Zeng
-;; Created: Fri Mar 15 11:16:53 2019 (-0400)
+;; Created: Thu Mar 14 17:32:54 2019 (-0400)
 ;; Version: 3.0
 ;; URL: https://github.com/MatthewZMD/.emacs.d
-;; Keywords: M-EMACS .emacs.d tetris speed-type 2048
+;; Keywords: M-EMACS .emacs.d fonts
 ;; Compatibility: emacs-version >= 26.1
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Commentary:
 ;;
-;; This initializes tetris, speed-type, 2048
+;; This initializes hackernews.el
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -35,38 +35,17 @@
 ;;
 ;;; Code:
 
-;; TetrisConfig
-(use-package tetris
-  :ensure nil
-  :commands (tetris)
+(eval-when-compile
+  (require 'init-global-config))
+
+;; HackerNewsPac
+(use-package hackernews
+  :commands (hackernews)
   :bind
-  (:map tetris-mode-map
-        ("C-p" . tetris-rotate-prev)
-        ("C-n" . tetris-rotate-down)
-        ("C-b" . tetris-move-left)
-        ("C-f" . tetris-move-right)
-        ("C-SPC" . tetris-move-bottom))
-  :config
-  (defadvice tetris-end-game (around zap-scores activate)
-    (save-window-excursion ad-do-it)))
-;; -TetrisConfig
+  (("M-z h" . hackernews)
+   ("M-m h" . hackernews)))
+;; -HackerNewsPac
 
-;; SpeedTypePac
-(use-package speed-type
-  :commands (speed-type-text))
-;; -SpeedTypePac
-
-;; 2048Pac
-(use-package 2048-game
-  :commands (2048-game))
-;; -2048Pac
-
-;; SnowPac
-(use-package snow
-  :load-path (lambda () (expand-file-name "site-elisp/snow.el" user-emacs-directory))
-  :commands (let-it-snow))
-;; -SnowPac
-
-(provide 'init-games)
+(provide 'init-hackernews)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-games.el ends here
+;;; init-hackernews.el ends here

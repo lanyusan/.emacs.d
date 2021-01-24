@@ -134,11 +134,13 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 
 (require 'init-shell)
 
+(require 'init-input-method)
+
 (require 'init-dired)
 
 (require 'init-buffer)
 
-;; User Interface Enhancements
+;; UI Enhancements
 (require 'init-ui-config)
 
 (require 'init-theme)
@@ -183,8 +185,8 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 (require 'init-company)
 
 ;; Programming
-
 ;; (require 'init-java)
+
 
 ;; (require 'init-cc)
 
@@ -200,6 +202,7 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 
 ;; Web Development
 (require 'init-webdev)
+
 
 ;; JS Development
 (require 'init-js)
@@ -228,6 +231,8 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 ;; (require 'init-epaint)
 
 ;; (require 'init-games)
+
+(require 'init-epaint)
 
 (require 'init-zone)
 
