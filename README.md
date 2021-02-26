@@ -213,7 +213,7 @@ Some heartwarming responses from the Emacs community:
 
     ```bash
     cd ~
-    git clone --recurse-submodules -j8 https://github.com/MatthewZMD/.emacs.d.git
+    git clone --recurse-submodules -j8 https://github.com/lanyusan/.emacs.d.git
     cd .emacs.d
     ```
 3.  Ensure a stable connection to Melpa Packages, then open Emacs.
