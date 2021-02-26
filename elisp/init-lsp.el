@@ -73,9 +73,10 @@
   (lsp-ui-doc-header t)
   (lsp-ui-doc-include-signature t)
   (lsp-ui-doc-border (face-foreground 'default))
-  (lsp-ui-sideline-enable nil)
+  (lsp-ui-sideline-enable t)
   (lsp-ui-sideline-ignore-duplicate t)
-  (lsp-ui-sideline-show-code-actions nil)
+  (lsp-ui-sideline-show-code-actions t)
+  (lsp-ui-sideline-show-hover nil)
   :config
   ;; Use lsp-ui-doc-webkit only in GUI
   (if (display-graphic-p)

@@ -18,6 +18,7 @@
   - [[Garbage Collection][Garbage Collection]]
   - [[Load Path][Load Path]]
   - [[Define Constants][Define Constants]]
+  - [[Load Private File][Load Private File]]
 - [[Package Management][Package Management]]
   - [[Melpa Packages][Melpa Packages]]
   - [[Non-Melpa Packages][Non-Melpa Packages]]
@@ -44,8 +45,7 @@
   - [[Terminal][Terminal]]
   - [[Sudo Edit][Sudo Edit]]
   - [[Ibuffer][Ibuffer]]
-  - [[Input Method][Input Method]]
-  - [[Configs][Configs]]
+  - [[Config][Config]]
   - [[Functions][Functions]]
 - [[UI Enhancements][UI Enhancements]]
   - [[Doom Themes][Doom Themes]]
@@ -60,7 +60,7 @@
   - [[Projectile][Projectile]]
   - [[Treemacs][Treemacs]]
   - [[YASnippet][YASnippet]]
-  - [[Flycheck][Flycheck]]
+  - [[Syntax][Syntax]]
   - [[Dumb Jump][Dumb Jump]]
   - [[Parenthesis][Parenthesis]]
   - [[Indentation][Indentation]]
@@ -101,6 +101,7 @@
   - [[Hacker News][Hacker News]]
   - [[EWW][EWW]]
 - [[Miscellaneous][Miscellaneous]]
+  - [[Chinese][Chinese]]
   - [[Tetris][Tetris]]
   - [[Speed Type][Speed Type]]
   - [[2048 Game][2048 Game]]
@@ -247,6 +248,9 @@
    #+INCLUDE: "~/.emacs.d/init.el" src emacs-lisp :range-begin "LoadPath" :range-end "-LoadPath"  :lines "87-101"
 ** Define Constants
    #+INCLUDE: "~/.emacs.d/elisp/init-const.el" src emacs-lisp :range-begin "Consts" :range-end "-Consts"  :lines "44-77"
+** Load Private File
+   An =init-private.el= file has been designated at =user-emacs-directory= for you to store personal configurations that you don't want to source-control.
+   #+INCLUDE: "~/.emacs.d/init.el" src emacs-lisp :range-begin "InitPrivate" :range-end "-InitPrivate"  :lines "235-238"
 * Package Management
   Some packages are disabled with the =:disabled= tag, because I don't use them very often. You can disable packages similarly yourself too:
   #+begin_src emacs-lisp
@@ -359,16 +363,7 @@
 
    It uses [[https://github.com/purcell/ibuffer-vc][IBuffer VC]] that group buffers by git project and show file state.
    #+INCLUDE: "~/.emacs.d/elisp/init-buffer.el" src emacs-lisp :range-begin "IBufferPac" :range-end "-IBufferPac" :lines "39-59"
-** Input Method
-*** Pyim
-    [[https://github.com/tumashu/pyim][Pyim]], an Emacs Chinese Pinyin Input. It uses [[https://github.com/tumashu/posframe][posframe]] package to display candidates.
-
-    我已经停止使用作者推荐的无痛中英切换，它对需要同时打英文和中文的情况不是很友好。如需切换输入法，请善用 =C-\= 。
-    #+INCLUDE: "~/.emacs.d/elisp/init-input-method.el" src emacs-lisp :range-begin "PyimPac" :range-end "-PyimPac" :lines "39-57"
-**** Pyim BaseDict
-     [[https://github.com/tumashu/pyim-basedict][Pyim BaseDict]], the default Chinese-Pyim dictionary.
-     #+INCLUDE: "~/.emacs.d/elisp/init-input-method.el" src emacs-lisp :range-begin "PyimBaseDictPac" :range-end "-PyimBaseDictPac" :lines "60-63"
-** Configs
+** Config
    Some essential configs that make my life a lot easier.
 *** UTF-8 Coding System
     Use UTF-8 as much as possible with unix line endings.
@@ -378,7 +373,7 @@
 *** History
     #+INCLUDE: "~/.emacs.d/elisp/init-global-config.el" src emacs-lisp :range-begin "History" :range-end "-History" :lines "114-138"
 *** Small Configs
-    #+INCLUDE: "~/.emacs.d/elisp/init-global-config.el" src emacs-lisp :range-begin "SmallConfigs" :range-end "-SmallConfigs" :lines "141-183"
+    #+INCLUDE: "~/.emacs.d/elisp/init-global-config.el" src emacs-lisp :range-begin "SmallConfigs" :range-end "-SmallConfigs" :lines "141-186"
 ** Functions
    Important functions.
 *** Resize Window Width / Height Functions
@@ -463,9 +458,13 @@
 *** YASnippet
     [[https://github.com/joaotavora/yasnippet][YASnippet]], a programming template system for Emacs. It loads [[https://github.com/AndreaCrotti/yasnippet-snippets][YASnippet Snippets]], a collection of yasnippet snippets for many languages.
     #+INCLUDE: "~/.emacs.d/elisp/init-yasnippet.el" src emacs-lisp :range-begin "YASnippetPac" :range-end "-YASnippetPac" :lines "39-60"
-** Flycheck
-   [[https://www.flycheck.org/en/latest/][Flycheck]], a syntax checking extension.
-   #+INCLUDE: "~/.emacs.d/elisp/init-flycheck.el" src emacs-lisp :range-begin "FlyCheckPac" :range-end "-FlyCheckPac" :lines "39-69"
+** Syntax
+*** Flycheck
+    [[https://www.flycheck.org/en/latest/][Flycheck]], a syntax checking extension.
+    #+INCLUDE: "~/.emacs.d/elisp/init-syntax.el" src emacs-lisp :range-begin "FlyCheckPac" :range-end "-FlyCheckPac" :lines "39-75"
+*** Flyspell
+    [[https://www.emacswiki.org/emacs/FlySpell][Flyspell]] enables on-the-fly spell checking in Emacs and uses [[https://github.com/d12frosted/flyspell-correct][Flyspell Correct]] for distraction-free words correction using Ivy.
+    #+INCLUDE: "~/.emacs.d/elisp/init-syntax.el" src emacs-lisp :range-begin "FlyspellPac" :range-end "-FlyspellPac" :lines "78-96"
 ** Dumb Jump
    [[https://github.com/jacktasia/dumb-jump][Dumb jump]], an Emacs "jump to definition" package.
    #+INCLUDE: "~/.emacs.d/elisp/init-dumb-jump.el" src emacs-lisp :range-begin "DumbJump" :range-end "-DumbJump" :lines "39-46"
@@ -634,23 +633,23 @@
    [[https://orgmode.org/][Org]], a Emacs built-in tool for keeping notes, maintaining TODO lists, planning projects, and authoring documents with a fast and effective plain-text system.
 
    *Prerequisite*: Configure =(org-agenda-files (list "~/org/agenda/"))= to your agenda folder to use org-agenda. Once this is set, the agenda items tagged with =DEADLINE= or =SCHEDULED= will be displayed on the [[Dashboard][Dashboard]] (hopefully the dashboard will be more detailed in the [[https://github.com/MatthewZMD/.emacs.d/issues/37][future]]).
-   #+INCLUDE: "~/.emacs.d/elisp/init-org.el" src emacs-lisp :range-begin "OrgPac" :range-end "-OrgPac" :lines "39-79"
+   #+INCLUDE: "~/.emacs.d/elisp/init-org.el" src emacs-lisp :range-begin "OrgPac" :range-end "-OrgPac" :lines "39-80"
 *** TOC Org
     [[https://github.com/snosov1/toc-org][TOC Org]] generates table of contents for =.org= files
-    #+INCLUDE: "~/.emacs.d/elisp/init-org.el" src emacs-lisp :range-begin "TocOrgPac" :range-end "-TocOrgPac" :lines "82-84"
+    #+INCLUDE: "~/.emacs.d/elisp/init-org.el" src emacs-lisp :range-begin "TocOrgPac" :range-end "-TocOrgPac" :lines "83-85"
 *** HTMLize
     [[https://github.com/hniksic/emacs-htmlize][HTMLize]], a tool that converts buffer text and decorations to HTML.
-    #+INCLUDE: "~/.emacs.d/elisp/init-org.el" src emacs-lisp :range-begin "HTMLIZEPac" :range-end "-HTMLIZEPac" :lines "87-88"
+    #+INCLUDE: "~/.emacs.d/elisp/init-org.el" src emacs-lisp :range-begin "HTMLIZEPac" :range-end "-HTMLIZEPac" :lines "88-89"
 *** GFM Exporter
     [[https://github.com/larstvei/ox-gfm][OX-GFM]], a Github Flavored Markdown exporter for Org Mode.
-    #+INCLUDE: "~/.emacs.d/elisp/init-org.el" src emacs-lisp :range-begin "OXGFMPac" :range-end "-OXGFMPac" :lines "91-92"
+    #+INCLUDE: "~/.emacs.d/elisp/init-org.el" src emacs-lisp :range-begin "OXGFMPac" :range-end "-OXGFMPac" :lines "92-93"
 *** PlantUML and Graphviz
     [[https://github.com/skuro/plantuml-mode][PlantUML Mode]], a major mode for editing PlantUML sources.
 
     *Prerequisite*:
     1. Install [[http://plantuml.com/download][plantuml]] and configure =(org-plantuml-jar-path (expand-file-name "path/to/plantuml.jar"))=.
     2. Install [[https://graphviz.gitlab.io/download/][Graphviz]] on your system to support graph visualization. Execute =sudo apt install graphviz= in Ubuntu.
-    #+INCLUDE: "~/.emacs.d/elisp/init-org.el" src emacs-lisp :range-begin "PlantUMLPac" :range-end "-PlantUMLPac" :lines "95-104"
+    #+INCLUDE: "~/.emacs.d/elisp/init-org.el" src emacs-lisp :range-begin "PlantUMLPac" :range-end "-PlantUMLPac" :lines "96-105"
 ** PDF Tools
    [[https://github.com/politza/pdf-tools][PDF Tools]], an Emacs support library for PDF files. It works best on non-Windows OS.
 
@@ -666,7 +665,7 @@
    #+BEGIN_SRC bash
    sudo apt-get install python3-pyqt5.qtwebengine python3-pyqt5.qtmultimedia
    #+END_SRC
-   #+INCLUDE: "~/.emacs.d/elisp/init-eaf.el" src emacs-lisp :range-begin "EAFPac" :range-end "-EAFPac" :lines "42-72"
+   #+INCLUDE: "~/.emacs.d/elisp/init-eaf.el" src emacs-lisp :range-begin "EAFPac" :range-end "-EAFPac" :lines "42-77"
 ** ERC
    [[https://www.emacswiki.org/emacs/ERC][Emacs Relay Chat]], a powerful, modular, and extensible [[http://www.irc.org/][IRC]] client for Emacs. It utilizes [[https://github.com/leathekd/erc-hl-nicks][erc-hl-nicks]] for nickname highlighting and [[https://github.com/kidd/erc-image.el][erc-image]] to fetch and show received images in ERC.
 
@@ -715,6 +714,17 @@
    Emacs Web Wowser, the HTML-based Emacs Web Browser.
    #+INCLUDE: "~/.emacs.d/elisp/init-eww.el" src emacs-lisp :range-begin "EWWPac" :range-end "-EWWPac" :lines "42-52"
 * Miscellaneous
+** Chinese
+   Packages and configurations suitable for Chinese users. Non-Chinese users feel free to add =:disabled= tags for them.
+*** Pyim
+    - [[https://github.com/tumashu/pyim][Pyim]], an Emacs Chinese Pinyin Input. It uses [[https://github.com/tumashu/posframe][posframe]] package to display candidates.
+    - [[https://github.com/tumashu/pyim-basedict][Pyim BaseDict]], the default Chinese-Pyim dictionary.
+
+    我已经停止使用作者推荐的无痛中英切换，它对需要同时打英文和中文的情况不是很友好。如需切换输入法，请善用 =C-\= 。
+    #+INCLUDE: "~/.emacs.d/elisp/init-chinese.el" src emacs-lisp :range-begin "PyimPac" :range-end "-PyimPac" :lines "39-60"
+*** Youdao
+    [[https://github.com/xuchunyang/youdao-dictionary.el][Youdao]] interface for Emacs.
+    #+INCLUDE: "~/.emacs.d/elisp/init-chinese.el" src emacs-lisp :range-begin "YoudaoPac" :range-end "-YoudaoPac" :lines "63-68"
 ** Tetris
    Although [[https://www.emacswiki.org/emacs/TetrisMode][Tetris]] is part of Emacs, but there still could be some configurations.
    #+INCLUDE: "~/.emacs.d/elisp/init-games.el" src emacs-lisp :range-begin "TetrisConfig" :range-end "-TetrisConfig" :lines "39-52"
