@@ -46,9 +46,9 @@
 ;; -WebModePac
 
 ;; Js2Pac
-;; (use-package js2-mode
-;;   :mode "\\.js\\'"
-;;   :interpreter "node")
+(use-package js2-mode
+  :mode ("\\.js\\'" "\\.mjs\\'")
+  :interpreter "node")
 ;; -Js2Pac
 
 (use-package prettier-js
