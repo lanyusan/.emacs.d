@@ -1,4 +1,4 @@
-#+OPTIONS: toc:nil
+nq#+OPTIONS: toc:nil
 #+EXPORT_FILE_NAME: README
 * M-EMACS
 * Table of Contents                                               :TOC_2_ORG:
@@ -250,7 +250,7 @@
    #+INCLUDE: "~/.emacs.d/elisp/init-const.el" src emacs-lisp :range-begin "Consts" :range-end "-Consts"  :lines "44-77"
 ** Load Private File
    An =init-private.el= file has been designated at =user-emacs-directory= for you to store personal configurations that you don't want to source-control.
-   #+INCLUDE: "~/.emacs.d/init.el" src emacs-lisp :range-begin "InitPrivate" :range-end "-InitPrivate"  :lines "235-238"
+   #+INCLUDE: "~/.emacs.d/init.el" src emacs-lisp :range-begin "InitPrivate" :range-end "-InitPrivate"  :lines "243-246"
 * Package Management
   Some packages are disabled with the =:disabled= tag, because I don't use them very often. You can disable packages similarly yourself too:
   #+begin_src emacs-lisp
@@ -461,10 +461,10 @@
 ** Syntax
 *** Flycheck
     [[https://www.flycheck.org/en/latest/][Flycheck]], a syntax checking extension.
-    #+INCLUDE: "~/.emacs.d/elisp/init-syntax.el" src emacs-lisp :range-begin "FlyCheckPac" :range-end "-FlyCheckPac" :lines "39-75"
+    #+INCLUDE: "~/.emacs.d/elisp/init-syntax.el" src emacs-lisp :range-begin "FlyCheckPac" :range-end "-FlyCheckPac" :lines "39-76"
 *** Flyspell
     [[https://www.emacswiki.org/emacs/FlySpell][Flyspell]] enables on-the-fly spell checking in Emacs and uses [[https://github.com/d12frosted/flyspell-correct][Flyspell Correct]] for distraction-free words correction using Ivy.
-    #+INCLUDE: "~/.emacs.d/elisp/init-syntax.el" src emacs-lisp :range-begin "FlyspellPac" :range-end "-FlyspellPac" :lines "78-96"
+    #+INCLUDE: "~/.emacs.d/elisp/init-syntax.el" src emacs-lisp :range-begin "FlyspellPac" :range-end "-FlyspellPac" :lines "79-97"
 ** Dumb Jump
    [[https://github.com/jacktasia/dumb-jump][Dumb jump]], an Emacs "jump to definition" package.
    #+INCLUDE: "~/.emacs.d/elisp/init-dumb-jump.el" src emacs-lisp :range-begin "DumbJump" :range-end "-DumbJump" :lines "39-46"
@@ -518,17 +518,17 @@
 *** LSP Mode
     [[https://github.com/emacs-lsp/lsp-mode][Language Server Protocol Mode]], a client/library for the [[https://microsoft.github.io/language-server-protocol/][Language Server Protocol]]. M-EMACS tries to use lsp-mode whenever possible.
 
-    #+INCLUDE: "~/.emacs.d/elisp/init-lsp.el" src emacs-lisp :range-begin "LSPPac" :range-end "-LSPPac" :lines "39-52"
+    #+INCLUDE: "~/.emacs.d/elisp/init-lsp.el" src emacs-lisp :range-begin "LSPPac" :range-end "-LSPPac" :lines "39-53"
 *** LSP UI
     [[https://github.com/emacs-lsp/lsp-ui][Language Server Protocol UI]], provides all the higher level UI modules of lsp-mode, like flycheck support and code lenses.
 
     Note: =lsp-ui-doc= is too annoying, so it will not be triggered upon hovering. You have to toggle it using =M-i=.
-    #+INCLUDE: "~/.emacs.d/elisp/init-lsp.el" src emacs-lisp :range-begin "LSPUI" :range-end "-LSPUI" :lines "55-86"
+    #+INCLUDE: "~/.emacs.d/elisp/init-lsp.el" src emacs-lisp :range-begin "LSPUI" :range-end "-LSPUI" :lines "56-88"
 ** DAP
    [[https://github.com/emacs-lsp/dap-mode][Debug Adapter Protocol Mode]], a client/library for the [[https://code.visualstudio.com/api/extension-guides/debugger-extension][Debug Adapter Protocol]].
 
    *Prerequisite*: See [[https://github.com/emacs-lsp/dap-mode#configuration][Configuration]] to configure DAP appropriately.
-   #+INCLUDE: "~/.emacs.d/elisp/init-lsp.el" src emacs-lisp :range-begin "DAPPac" :range-end "-DAPPac" :lines "89-99"
+   #+INCLUDE: "~/.emacs.d/elisp/init-lsp.el" src emacs-lisp :range-begin "DAPPac" :range-end "-DAPPac" :lines "91-101"
 ** Company
 *** Company Mode
     [[http://company-mode.github.io/][Company]], a text completion framework for Emacs.
@@ -618,16 +618,16 @@
     #+INCLUDE: "~/.emacs.d/elisp/init-webdev.el" src emacs-lisp :range-begin "Js2Pac" :range-end "-Js2Pac" :lines "49-52"
 *** TypeScript Mode
     [[https://github.com/emacs-typescript/typescript.el][TypeScript mode]], a feature that offers TypeScript support for Emacs.
-    #+INCLUDE: "~/.emacs.d/elisp/init-webdev.el" src emacs-lisp :range-begin "TypeScriptPac" :range-end "-TypeScriptPac" :lines "55-58"
+    #+INCLUDE: "~/.emacs.d/elisp/init-webdev.el" src emacs-lisp :range-begin "TypeScriptPac" :range-end "-TypeScriptPac" :lines "62-65"
 ** Emmet
    [[https://github.com/smihica/emmet-mode][Emmet]], a feature that allows writing HTML using CSS selectors along with =C-j=. See [[https://github.com/smihica/emmet-mode#usage][usage]] for more information.
-   #+INCLUDE: "~/.emacs.d/elisp/init-webdev.el" src emacs-lisp :range-begin "EmmetPac" :range-end "-EmmetPac" :lines "61-64"
+   #+INCLUDE: "~/.emacs.d/elisp/init-webdev.el" src emacs-lisp :range-begin "EmmetPac" :range-end "-EmmetPac" :lines "68-71"
 ** Instant Rename Tag
    [[https://github.com/manateelazycat/instant-rename-tag][Instant Rename Tag]], a plugin that provides ability to rename html tag pairs instantly.
-   #+INCLUDE: "~/.emacs.d/elisp/init-webdev.el" src emacs-lisp :range-begin "InstantRenameTagPac" :range-end "-InstantRenameTagPac" :lines "67-70"
+   #+INCLUDE: "~/.emacs.d/elisp/init-webdev.el" src emacs-lisp :range-begin "InstantRenameTagPac" :range-end "-InstantRenameTagPac" :lines "74-77"
 ** JSON
    [[https://github.com/joshwnj/json-mode][JSON Mode]], a major mode for editing JSON files.
-   #+INCLUDE: "~/.emacs.d/elisp/init-webdev.el" src emacs-lisp :range-begin "JsonPac" :range-end "-JsonPac" :lines "73-75"
+   #+INCLUDE: "~/.emacs.d/elisp/init-webdev.el" src emacs-lisp :range-begin "JsonPac" :range-end "-JsonPac" :lines "80-82"
 * Office
 ** Org
    [[https://orgmode.org/][Org]], a Emacs built-in tool for keeping notes, maintaining TODO lists, planning projects, and authoring documents with a fast and effective plain-text system.
