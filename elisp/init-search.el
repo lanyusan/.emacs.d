@@ -74,7 +74,7 @@
 (use-package color-rg
   :load-path (lambda () (expand-file-name "site-elisp/color-rg" user-emacs-directory))
   :if (executable-find "rg")
-  :bind ("C-M-s" . color-rg-search-input))
+  :bind ("C-z m" . color-rg-search-input))
 ;; -ColorRGPac
 
 ;; FFIPPac
