@@ -238,6 +238,9 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 ;; fsharp
 (require 'init-fsharp)
 
+;; clojure
+(require 'init-clojure)
+
 (require 'init-restclient)
 ;; InitPrivate
 ;; Load init-private.el if it exists
