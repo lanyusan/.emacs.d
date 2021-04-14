@@ -238,6 +238,9 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 ;; fsharp
 (require 'init-fsharp)
 
+;; julia
+(require 'init-julia)
+
 ;; clojure
 (require 'init-clojure)
 
