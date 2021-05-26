@@ -45,7 +45,7 @@
   :bind
   (:map smartparens-mode-map
         ("C-M-f" . sp-forward-sexp)
-        ("C-M-b" . sp-backward-sexp)
+        ("C-M-g" . sp-backward-sexp)
         ("C-M-a" . sp-backward-down-sexp)
         ("C-M-e" . sp-up-sexp)
         ("C-M-w" . sp-copy-sexp)
