@@ -47,10 +47,12 @@
   (use-package ctable :defer t)
   (use-package deferred :defer t)
   :custom
-  (browse-url-browser-function 'eaf-open-browser) ;; Make EAF Browser my default browser
+  (browse-url-browser-function #'eaf-open-browser) ;; Make EAF Browser my default browser
   (eaf-browser-continue-where-left-off t)
   :config
   (require 'eaf-org)
+  (when (display-graphic-p)
+    (require 'eaf-all-the-icons))
   (defalias 'browse-web #'eaf-open-browser)
   (eaf-bind-key nil "M-q" eaf-browser-keybinding)
   (eaf-bind-key open_link "C-M-s" eaf-browser-keybinding)
