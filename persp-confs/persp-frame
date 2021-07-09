@@ -1,0 +1,9 @@
+;;; -*- mode: emacs-lisp; coding: utf-8-unix -*-
+;;; This is the previous frame parameters.
+;;; Last generated Tue Jul  6 17:42:19 2021.
+(setq initial-frame-alist
+      '((top . 26)
+        (left . 1991)
+        (width . 309)
+        (height . 80)
+        (fullscreen . maximized)))

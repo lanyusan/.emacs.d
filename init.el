@@ -180,7 +180,7 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 
 (require 'init-lsp)
 
-(require 'init-company)
+;; (require 'init-company)
 
 ;; Programming
 ;; (require 'init-java)
