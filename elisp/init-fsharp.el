@@ -10,7 +10,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 2
+;;     Update #: 11
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -46,11 +46,20 @@
 ;;
 ;;; Code:
 
+(use-package highlight-indentation
+  :ensure t)
+
 (use-package fsharp-mode
   ;; :config
   ;; (require 'eglot-fsharp)
   :defer t
-  :ensure t)
+  :ensure t
+  :config
+  (setq-default fsharp-indent-offset 4)
+  (setq inferior-fsharp-program "dotnet fsi --readline-")
+  (add-hook 'fsharp-mode-hook 'highlight-indentation-mode))
+
+(use-package eglot-fsharp)
 
 (provide 'init-fsharp)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

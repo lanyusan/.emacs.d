@@ -1,4 +1,5 @@
 ;;; -*- lisp-data -*-
-(("~/projects/lms/lms-oms-api-server/")
+(("~/projects/dakebiao/web/packages/users/")
+ ("~/projects/lms/lms-oms-api-server/")
  ("~/projects/duosite-mono/xyz/")
  ("~/projects/duosite-mono/duosite/"))
