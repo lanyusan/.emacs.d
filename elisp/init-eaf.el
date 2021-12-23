@@ -36,7 +36,8 @@
 ;;; Code:
 
 (eval-when-compile
-  (require 'init-const))
+  (require 'init-const)
+  (require 'init-global-config))
 
 ;; EAFPac
 (use-package eaf
@@ -54,7 +55,9 @@
   (eaf-pdf-dark-mode "ignore")
   :demand
   :bind
-  (("C-x j" . eaf-open-in-file-manager))
+  (("C-x j" . eaf-open-in-file-manager)
+   ("M-z r" . eaf-open-rss-reader)
+   ("M-m r" . eaf-open-rss-reader))
   :config
   ;; Require all EAF apps unconditionally, change to apps you're interested in.
   (require 'eaf-file-manager nil t)
@@ -107,6 +110,18 @@
   (eaf-bind-key toggle_preview "P" eaf-file-manager-keybinding))
 ;; -EAFPac
 
+;; PopwebPac
+(use-package popweb
+  :if eaf-env-p
+  :load-path (lambda () (expand-file-name "site-elisp/popweb" user-emacs-directory))
+  :config
+  (add-to-list 'load-path (expand-file-name "site-elisp/popweb/extension/latex" user-emacs-directory))
+  (add-to-list 'load-path (expand-file-name "site-elisp/popweb/extension/dict" user-emacs-directory))
+  :custom
+  (popweb-popup-pos "point-bottom")
+  :hook ((org-mode . popweb-latex-mode)
+         (tex-mode . popweb-latex-mode)))
+;; -PopwebPac
 
 (provide 'init-eaf)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
