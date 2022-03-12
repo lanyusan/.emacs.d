@@ -236,6 +236,10 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 ;; fsharp
 (require 'init-fsharp)
 
+;; solidity
+(require 'init-sol)
+
+
 ;; julia
 (require 'init-julia)
 
