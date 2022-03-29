@@ -1,5 +1,6 @@
 ;;; -*- lisp-data -*-
-(("~/projects/zhituji/canvas-mono/packages/canvas/")
+(("~/projects/zhituji/pynft/")
+ ("~/projects/zhituji/canvas-mono/packages/canvas/")
  ("~/projects/zhituji/bot-runner/")
  ("~/projects/dakebiao/web/packages/users/")
  ("~/projects/lms/lms-oms-api-server/")
