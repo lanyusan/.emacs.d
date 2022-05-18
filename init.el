@@ -246,6 +246,10 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 ;; clojure
 (require 'init-clojure)
 
+;; scala
+(require 'init-scala)
+
+
 ;; lisp
 (require 'init-lisp)
 
