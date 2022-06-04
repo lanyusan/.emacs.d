@@ -188,7 +188,7 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 
 (require 'init-python)
 
-;; (require 'init-haskell)
+(require 'init-haskell)
 
 (require 'init-ess)
 
