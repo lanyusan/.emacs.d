@@ -64,6 +64,7 @@ nq#+OPTIONS: toc:nil
   - [[Indentation][Indentation]]
   - [[Quickrun][Quickrun]]
   - [[Format All][Format All]]
+  - [[Ediff][Ediff]]
   - [[Evil Nerd Commenter][Evil Nerd Commenter]]
   - [[Editing][Editing]]
   - [[Headers][Headers]]
@@ -353,6 +354,9 @@ nq#+OPTIONS: toc:nil
 *** Term Keys
     [[https://github.com/CyberShadow/term-keys][Term Keys]], a lossless keyboard input for Emacs in terminal emulators.
     #+INCLUDE: "~/.emacs.d/elisp/init-shell.el" src emacs-lisp :range-begin "TermKeysPac" :range-end "-TermKeysPac" :lines "92-95"
+*** Exec Path From Shell
+    [[https://github.com/purcell/exec-path-from-shell][Exec Path From Shell]], a library to ensure environment variables inside Emacs look the same as in the user's shell.
+    #+INCLUDE: "~/.emacs.d/elisp/init-shell.el" src emacs-lisp :range-begin "ExecPathFromShellPac" :range-end "-ExecPathFromShellPac" :lines "98-102"
 ** Sudo Edit
    [[https://github.com/nflath/sudo-edit][Sudo Edit]], an utility for opening files with =sudo=.
    #+INCLUDE: "~/.emacs.d/elisp/init-global-config.el" src emacs-lisp :range-begin "SudoEditPac" :range-end "-SudoEditPac" :lines "42-44"
@@ -367,11 +371,11 @@ nq#+OPTIONS: toc:nil
     Use UTF-8 as much as possible with unix line endings.
     #+INCLUDE: "~/.emacs.d/elisp/init-global-config.el" src emacs-lisp :range-begin "UTF8Coding" :range-end "-UTF8Coding" :lines "65-76"
 *** Optimize Editing Experience
-    #+INCLUDE: "~/.emacs.d/elisp/init-global-config.el" src emacs-lisp :range-begin "EditExp" :range-end "-EditExp" :lines "79-111"
+    #+INCLUDE: "~/.emacs.d/elisp/init-global-config.el" src emacs-lisp :range-begin "EditExp" :range-end "-EditExp" :lines "79-121"
 *** History
-    #+INCLUDE: "~/.emacs.d/elisp/init-global-config.el" src emacs-lisp :range-begin "History" :range-end "-History" :lines "114-138"
+    #+INCLUDE: "~/.emacs.d/elisp/init-global-config.el" src emacs-lisp :range-begin "History" :range-end "-History" :lines "124-148"
 *** Small Configs
-    #+INCLUDE: "~/.emacs.d/elisp/init-global-config.el" src emacs-lisp :range-begin "SmallConfigs" :range-end "-SmallConfigs" :lines "141-192"
+    #+INCLUDE: "~/.emacs.d/elisp/init-global-config.el" src emacs-lisp :range-begin "SmallConfigs" :range-end "-SmallConfigs" :lines "151-202"
 ** Functions
    Important functions.
 *** Resize Window Width / Height Functions
@@ -401,10 +405,10 @@ nq#+OPTIONS: toc:nil
     [[https://github.com/rakanalh/emacs-dashboard][Dashboard]], an extensible Emacs startup screen.
 
     Use either =KEC_Dark_BK.png= or =KEC_Light_BK.png= depends on the backgrond theme.
-    #+INCLUDE: "~/.emacs.d/elisp/init-dashboard.el" src emacs-lisp :range-begin "DashboardPac" :range-end "-DashboardPac" :lines "39-87"
+    #+INCLUDE: "~/.emacs.d/elisp/init-dashboard.el" src emacs-lisp :range-begin "DashboardPac" :range-end "-DashboardPac" :lines "39-85"
 *** Page Break Lines
     [[https://github.com/purcell/page-break-lines][Page-break-lines]], a feature that displays ugly form feed characters as tidy horizontal rules.
-    #+INCLUDE: "~/.emacs.d/elisp/init-dashboard.el" src emacs-lisp :range-begin "PBLPac" :range-end "-PBLPac" :lines "90-93"
+    #+INCLUDE: "~/.emacs.d/elisp/init-dashboard.el" src emacs-lisp :range-begin "PBLPac" :range-end "-PBLPac" :lines "88-91"
 ** Fonts and Icons
    *Prerequisite*: Install all the available fonts and icons from =fonts/=.
 *** Fonts
@@ -421,23 +425,23 @@ nq#+OPTIONS: toc:nil
    Configurations to smooth scrolling.
    #+INCLUDE: "~/.emacs.d/elisp/init-scroll.el" src emacs-lisp :range-begin "SmoothScroll" :range-end "-SmoothScroll" :lines "39-52"
 ** Highlight Lines
-   #+INCLUDE: "~/.emacs.d/elisp/init-ui-config.el" src emacs-lisp :range-begin "Highlight" :range-end "-Highlight" :lines "42-43"
+   #+INCLUDE: "~/.emacs.d/elisp/init-ui-config.el" src emacs-lisp :range-begin "Highlight" :range-end "-Highlight" :lines "43-44"
 ** Prettify Symbols
    [[https://www.emacswiki.org/emacs/PrettySymbol][Prettify symbols mode]], a built-in mode for displaying sequences of characters as fancy characters or symbols.
-   #+INCLUDE: "~/.emacs.d/elisp/init-ui-config.el" src emacs-lisp :range-begin "PreSym" :range-end "-PreSym" :lines "46-58"
+   #+INCLUDE: "~/.emacs.d/elisp/init-ui-config.el" src emacs-lisp :range-begin "PreSym" :range-end "-PreSym" :lines "47-59"
 ** UI Configs
 *** Title Bar
-    #+INCLUDE: "~/.emacs.d/elisp/init-ui-config.el" src emacs-lisp :range-begin "TitleBar" :range-end "-TitleBar" :lines "61-62"
+    #+INCLUDE: "~/.emacs.d/elisp/init-ui-config.el" src emacs-lisp :range-begin "TitleBar" :range-end "-TitleBar" :lines "62-63"
 *** Simplify Yes/No Prompts
-    #+INCLUDE: "~/.emacs.d/elisp/init-ui-config.el" src emacs-lisp :range-begin "YorN" :range-end "-YorN" :lines "65-67"
+    #+INCLUDE: "~/.emacs.d/elisp/init-ui-config.el" src emacs-lisp :range-begin "YorN" :range-end "-YorN" :lines "66-68"
 *** Disable Splash Screen
-    #+INCLUDE: "~/.emacs.d/elisp/init-ui-config.el" src emacs-lisp :range-begin "StartupScreen" :range-end "-StartupScreen" :lines "70-74"
+    #+INCLUDE: "~/.emacs.d/elisp/init-ui-config.el" src emacs-lisp :range-begin "StartupScreen" :range-end "-StartupScreen" :lines "71-75"
 *** Line Numbers
     Display line numbers, and column numbers in modeline.
-    #+INCLUDE: "~/.emacs.d/elisp/init-ui-config.el" src emacs-lisp :range-begin "DisLineNum" :range-end "-DisLineNum" :lines "77-84"
+    #+INCLUDE: "~/.emacs.d/elisp/init-ui-config.el" src emacs-lisp :range-begin "DisLineNum" :range-end "-DisLineNum" :lines "78-85"
 *** Modeline Time and Battery
     Display time and battery information in modeline.
-    #+INCLUDE: "~/.emacs.d/elisp/init-ui-config.el" src emacs-lisp :range-begin "DisTimeBat" :range-end "-DisTimeBat" :lines "87-89"
+    #+INCLUDE: "~/.emacs.d/elisp/init-ui-config.el" src emacs-lisp :range-begin "DisTimeBat" :range-end "-DisTimeBat" :lines "88-92"
 * General Programming
 ** Magit
    [[https://magit.vc/][Magit]], an interface to the version control system Git.
@@ -472,9 +476,9 @@ nq#+OPTIONS: toc:nil
     #+INCLUDE: "~/.emacs.d/elisp/init-parens.el" src emacs-lisp :range-begin "MatchParens" :range-end "-MatchParens" :lines "66-105"
 ** Indentation
    [[https://github.com/DarthFennec/highlight-indent-guides][Highlight Indent Guides]], a feature that highlights indentation levels.
-   #+INCLUDE: "~/.emacs.d/elisp/init-indent.el" src emacs-lisp :range-begin "HighLightIndentPac" :range-end "-HighLightIndentPac" :lines "39-50"
+   #+INCLUDE: "~/.emacs.d/elisp/init-indent.el" src emacs-lisp :range-begin "HighLightIndentPac" :range-end "-HighLightIndentPac" :lines "39-51"
    Indentation Configuration
-   #+INCLUDE: "~/.emacs.d/elisp/init-indent.el" src emacs-lisp :range-begin "IndentConfig" :range-end "-IndentConfig" :lines "53-70"
+   #+INCLUDE: "~/.emacs.d/elisp/init-indent.el" src emacs-lisp :range-begin "IndentConfig" :range-end "-IndentConfig" :lines "54-71"
 ** Quickrun
    [[https://github.com/syohex/emacs-quickrun][Quickrun]], compile and run source code quickly.
    #+INCLUDE: "~/.emacs.d/elisp/init-quickrun.el" src emacs-lisp :range-begin "QuickrunPac" :range-end "-QuickrunPac" :lines "39-47"
@@ -483,6 +487,9 @@ nq#+OPTIONS: toc:nil
 
    *Prerequisite*: Read [[https://github.com/lassik/emacs-format-all-the-code#supported-languages][Supported Languages]] to see which additional tool you need to install for the specific language.
    #+INCLUDE: "~/.emacs.d/elisp/init-format.el" src emacs-lisp :range-begin "FormatAllPac" :range-end "-FormatAllPac" :lines "39-41"
+** Ediff
+   [[https://www.gnu.org/software/emacs/manual/html_mono/ediff.html][Ediff]], a mode to simultaneously browse through the differences between a pair of files or buffers.
+   #+INCLUDE: "~/.emacs.d/elisp/init-format.el" src emacs-lisp :range-begin "EdiffPac" :range-end "-EdiffPac" :lines "44-48"
 ** Evil Nerd Commenter
    [[https://github.com/redguardtoo/evil-nerd-commenter][Evil Nerd Commenter]], a tool that helps you comment code efficiently.
    #+INCLUDE: "~/.emacs.d/elisp/init-comment.el" src emacs-lisp :range-begin "EvilNerdCommenPac" :range-end "-EvilNerdCommenPac" :lines "39-43"
@@ -599,7 +606,7 @@ nq#+OPTIONS: toc:nil
     #+INCLUDE: "~/.emacs.d/elisp/init-latex.el" src emacs-lisp :range-begin "AUCTeXPac" :range-end "-AUCTeXPac" :lines "44-67"
 ** Yaml
    [[https://github.com/yoshiki/yaml-mode][Yaml mode]], the Emacs major mode for editing files in the YAML data serialization format.
-   #+INCLUDE: "~/.emacs.d/elisp/init-buildsystem.el" src emacs-lisp :range-begin "YamlPac" :range-end "-YamlPac" :lines "56-57"
+   #+INCLUDE: "~/.emacs.d/elisp/init-buildsystem.el" src emacs-lisp :range-begin "YamlPac" :range-end "-YamlPac" :lines "56-94"
 ** Buildsystem
 *** Docker
     [[https://github.com/Silex/docker.el][Docker]], a mode to manage docker from Emacs.
@@ -685,10 +692,6 @@ nq#+OPTIONS: toc:nil
 
    *Prerequisite*: Please ensure =python3= and =pip3= are installed, then follow [[https://github.com/manateelazycat/emacs-application-framework#install][install]] instructions.
 
-   Note that If you are using Debian/Ubuntu, it is possible that =QtWebEngine= is [[https://marc.info/?l=kde-core-devel&m=142954900813235&w=2][not working]]. Install the following:
-   #+BEGIN_SRC bash
-   sudo apt-get install python3-pyqt5.qtwebengine python3-pyqt5.qtmultimedia
-   #+END_SRC
    #+INCLUDE: "~/.emacs.d/elisp/init-eaf.el" src emacs-lisp :range-begin "EAFPac" :range-end "-EAFPac" :lines "43-113"
 ** Popweb
    [[https://github.com/manateelazycat/popweb][Popweb]], a lightweight version of EAF that provides multimedia capabilities.
@@ -719,7 +722,7 @@ nq#+OPTIONS: toc:nil
       #+END_SRC
       - If you are getting =Invalid Credentials= error and you are sure the password is correct, check [[https://appuals.com/fix-your-imap-server-wants-to-alert-you-invalid-credentials/][this]] link.
    4. (Optional) If you want to track meetings using =org-mode=, set =gnus-icalendar-org-capture-file= to the meeting's file.
-   #+INCLUDE: "~/.emacs.d/elisp/init-mu4e.el" src emacs-lisp :range-begin "Mu4ePac" :range-end "-Mu4ePac" :lines "39-157"
+   #+INCLUDE: "~/.emacs.d/elisp/init-mu4e.el" src emacs-lisp :range-begin "Mu4ePac" :range-end "-Mu4ePac" :lines "39-159"
 ** Tramp
    [[https://www.emacswiki.org/emacs/TrampMode][Tramp]], short for Transparent Remote Access, Multiple Protocols is a package for editing remote files using a remote shell connection (rlogin, telnet, ssh).
 *** Google Cloud Platform
