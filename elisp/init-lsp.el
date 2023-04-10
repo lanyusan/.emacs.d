@@ -45,6 +45,7 @@
   (lsp-prefer-flymake nil) ; Use flycheck instead of flymake
   (lsp-enable-file-watchers nil)
   (lsp-enable-folding nil)
+  (lsp-ui-doc-enable nil)
   (read-process-output-max (* 1024 1024))
   (lsp-keep-workspace-alive nil)
   (lsp-eldoc-hook nil)

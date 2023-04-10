@@ -1,0 +1,16 @@
+;;; -*- coding: utf-8; mode: lisp-data -*-
+(("/home/fqye/projects/ztj/"
+  (dired-filename . "/home/fqye/projects/ztj/bin"))
+ ("/home/fqye/projects/ztj/doc/deploy.md" . 633)
+ ("/home/fqye/projects/ztj/src/ztj/model.clj" . 245)
+ ("/home/fqye/projects/ztj/dev.sh" . 162)
+ ("/home/fqye/projects/"
+  (dired-filename . "/home/fqye/projects/dotnet-reverse-proxy"))
+ ("/home/fqye/projects/dotnet-reverse-proxy/"
+  (dired-filename . "/home/fqye/projects/dotnet-reverse-proxy/appsettings.Development.json"))
+ ("/home/fqye/projects/dotnet-reverse-proxy/deploy.sh" . 165)
+ ("/home/fqye/projects/dotnet-reverse-proxy/dev.sh" . 64)
+ ("/home/fqye/projects/dotnet-reverse-proxy/deploy-dev.sh" . 169)
+ ("/home/fqye/projects/dotnet-reverse-proxy/MyProxy.csproj" . 260)
+ ("/home/fqye/.emacs.d/"
+  (dired-filename . "/home/fqye/.emacs.d/personal")))

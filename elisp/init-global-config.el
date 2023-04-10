@@ -186,6 +186,9 @@ The original function deletes trailing whitespace of the current line."
 (when (fboundp 'global-so-long-mode)
   (global-so-long-mode))
 
+;; https://www.masteringemacs.org/article/improving-performance-emacs-display-engine
+(setq redisplay-dont-pause t)
+
 ;; Add a newline automatically at the end of the file upon save.
 (setq require-final-newline t)
 
