@@ -1,5 +1,6 @@
 ;;; -*- lisp-data -*-
-(("/home/fqye/projects/ztj-fe/")
+(("/home/fqye/projects/ztj/")
+ ("/home/fqye/projects/ztj-fe/")
  ("~/projects/projects/react-three/t1/")
  ("~/projects/zhituji/pynft/")
  ("~/projects/zhituji/canvas-mono/packages/canvas/")
