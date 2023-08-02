@@ -58,7 +58,8 @@
   :bind
   (("C-x j" . eaf-open-in-file-manager)
    ("M-z r" . eaf-open-rss-reader)
-   ("M-m r" . eaf-open-rss-reader))
+   ("M-m r" . eaf-open-rss-reader)
+   ("M-#" . eaf-open-pyqterminal))
   :config
   ;; Require all EAF apps unconditionally, change to apps you're interested in.
   (require 'eaf-file-manager nil t)
@@ -67,7 +68,6 @@
   (require 'eaf-camera nil t)
   (require 'eaf-demo nil t)
   (require 'eaf-airshare nil t)
-  (require 'eaf-terminal nil t)
   (require 'eaf-markdown-previewer nil t)
   (require 'eaf-video-player nil t)
   (require 'eaf-vue-demo nil t)
@@ -79,6 +79,7 @@
   (require 'eaf-org-previewer nil t)
   (require 'eaf-system-monitor nil t)
   (require 'eaf-rss-reader nil t)
+  (require 'eaf-pyqterminal nil t)
   (require 'eaf-file-browser nil t)
   (require 'eaf-browser nil t)
   (require 'eaf-git nil t)
@@ -86,6 +87,7 @@
     (require 'eaf-all-the-icons))
   (defalias 'browse-web #'eaf-open-browser)
   (eaf-bind-key nil "M-q" eaf-browser-keybinding)
+  (eaf-bind-key nil "M-z" eaf-browser-keybinding)
   (eaf-bind-key open_link "C-M-s" eaf-browser-keybinding)
   (eaf-bind-key open_devtools "M-i" eaf-browser-keybinding)
   (eaf-bind-key insert_or_recover_prev_close_page "X" eaf-browser-keybinding)
