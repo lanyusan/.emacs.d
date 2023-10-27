@@ -37,11 +37,13 @@
 
 ;; HaskellModePac
 (use-package haskell-mode
+
   :mode "\\.hs\\'"
   :config
   (add-hook 'haskell-mode-hook #'lsp)
   (add-hook 'haskell-literate-mode-hook #'lsp)
   (customize-group 'lsp-haskell))
+
 ;; -HaskellModePac
 
 (provide 'init-haskell)
