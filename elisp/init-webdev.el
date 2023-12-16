@@ -54,14 +54,14 @@
 (use-package prettier-js
   :diminish
   :bind ("C-c C-p" . prettier-js)
-  :hook ((js-mode js2-mode json-mode web-mode css-mode sgml-mode html-mode typescript-mode)
+  :hook ((js-mode js2-mode json-mode web-mode css-mode sgml-mode html-mode typescript-ts-mode)
          .
          prettier-js-mode))
 
 ;; TypeScriptPac
-(use-package typescript-mode
+(use-package typescript-ts-mode
   :mode "\\.ts[x]\\'"
-  :commands (typescript-mode))
+  :commands (typescript-ts-mode))
 ;; -TypeScriptPac
 
 ;; VuePac
