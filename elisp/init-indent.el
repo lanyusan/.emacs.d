@@ -14,7 +14,7 @@
 ;;
 ;;; Commentary:
 ;;
-;; This initializes highlight-indent-guides
+;;
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -35,20 +35,25 @@
 ;;
 ;;; Code:
 
-;; HighLightIndentPac
-(use-package highlight-indent-guides
-  :if (display-graphic-p)
-  :diminish
-  ;; Enable manually if needed, it a severe bug which potentially core-dumps Emacs
-  ;; https://github.com/DarthFennec/highlight-indent-guides/issues/76
-  :commands (highlight-indent-guides-mode)
-  :mode ("\\.yml\\'" . highlight-indent-guides-mode)
+;; IndentBarsPac
+(use-package indent-bars
+  :load-path (lambda () (expand-file-name "site-elisp/indent-bars" user-emacs-directory))
   :custom
-  (highlight-indent-guides-method 'character)
-  (highlight-indent-guides-responsive 'top)
-  (highlight-indent-guides-delay 0)
-  (highlight-indent-guides-auto-character-face-perc 7))
-;; -HighLightIndentPac
+  (indent-bars-treesit-support t)
+  (indent-bars-no-descend-string t)
+  (indent-bars-treesit-ignore-blank-lines-types '("module"))
+  (indent-bars-treesit-wrap '((python argument_list parameters
+				      list list_comprehension
+				      dictionary dictionary_comprehension
+				      parenthesized_expression subscript)))
+  (indent-bars-pattern ". . . . ")
+  (indent-bars-width-frac 0.25)
+  (indent-bars-pad-frac 0.2)
+  (indent-bars-zigzag 0.1)
+  (indent-bars-color-by-depth '(:regexp "outline-\\([0-9]+\\)" :blend 1))
+  (indent-bars-highlight-current-depth '(:pattern "." :pad 0.1 :width 0.45))
+  :hook ((prog-mode yaml-mode) . indent-bars-mode))
+;; -IndentBarsPac
 
 ;; IndentConfig
 (setq-default indent-tabs-mode nil)

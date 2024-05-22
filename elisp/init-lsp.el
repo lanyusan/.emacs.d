@@ -52,7 +52,7 @@
   :bind (:map lsp-mode-map ("C-c C-f" . lsp-format-buffer))
 
   :hook ((java-mode python-mode go-mode rust-mode fsharp-mode
-          js-mode js2-mode typescript-mode web-mode typescript-ts-mode
+          js-mode js2-mode web-mode typescript-ts-mode
           c-mode c++-mode objc-mode) . lsp-deferred)
   :config
   (defun lsp-update-server ()

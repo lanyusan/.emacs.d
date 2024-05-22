@@ -40,7 +40,7 @@
   (require 'init-const))
 
 ;; PythonConfig
-(use-package python-mode
+(use-package python-ts-mode
   :ensure nil
   :after flycheck
   :mode "\\.py\\'"
@@ -52,7 +52,7 @@
 
 ;; LSPPythonPac
 (use-package lsp-pyright
-  :hook (python-mode . (lambda () (require 'lsp-pyright)))
+  :hook (python-ts-mode . (lambda () (require 'lsp-pyright)))
   :custom
   (lsp-pyright-multi-root nil))
 ;; -LSPPythonPac

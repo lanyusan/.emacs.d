@@ -47,8 +47,11 @@
 
 ;; Js2Pac
 (use-package js2-mode
+
   :mode ("\\.js\\'" "\\.mjs\\'")
-  :interpreter "node")
+  :interpreter "node"
+  :bind (:map js-mode-map ("M-." . nil)))
+
 ;; -Js2Pac
 
 (use-package prettier-js
