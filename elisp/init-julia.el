@@ -10,7 +10,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 4
+;;     Update #: 7
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -56,7 +56,7 @@
   :defer t
   :ensure t)
 
-(add-hook 'ess-julia-mode-hook #'lsp-mode)
+;(add-hook 'ess-julia-mode-hook #'lsp-mode)
 
 (provide 'init-julia)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

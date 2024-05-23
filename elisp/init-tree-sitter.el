@@ -1,20 +1,20 @@
-;;; init-java.el --- -*- lexical-binding: t -*-
+;;; init-tree-sitter.el --- -*- lexical-binding: t -*-
 ;;
-;; Filename: init-java.el
-;; Description: Initialize lsp-java java-one-click-run
+;; Filename: init-tree-sitter.el
+;; Description: Initialize Parenthesis
 ;; Author: Mingde (Matthew) Zeng
 ;; Copyright (C) 2019 Mingde (Matthew) Zeng
-;; Created: Thu Jul  4 21:26:24 2019 (-0400)
+;; Created: Fri Mar 15 10:17:13 2019 (-0400)
 ;; Version: 3.0
 ;; URL: https://github.com/MatthewZMD/.emacs.d
-;; Keywords: M-EMACS .emacs.d lsp-java java-one-click-run
+;; Keywords: M-EMACS .emacs.d parenthesis smartparens delete-block
 ;; Compatibility: emacs-version >= 26.1
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Commentary:
 ;;
-;; This initializes lsp-java and java-one-click-run
+;; This initializes tree-sitter
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -35,17 +35,18 @@
 ;;
 ;;; Code:
 
-;; LSPJavaPac
-(use-package lsp-java
-  :after lsp-mode
-  :if (executable-find "mvn")
-  :init
-  (use-package request :defer t)
-  :custom
-  (lsp-java-server-install-dir (expand-file-name "~/.emacs.d/eclipse.jdt.ls/server/"))
-  (lsp-java-workspace-dir (expand-file-name "~/.emacs.d/eclipse.jdt.ls/workspace/")))
-;; -LSPJavaPac
 
-(provide 'init-java)
+(eval-when-compile
+  (require 'init-global-config))
+
+(use-package tree-sitter-langs)
+
+(use-package tree-sitter
+  :after tree-sitter-langs
+  :config
+  (global-tree-sitter-mode)
+  :hook (tree-sitter-after-on . tree-sitter-hl-mode))
+
+(provide 'init-tree-sitter)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-java.el ends here
+;;; init-tree-sitter.el ends here

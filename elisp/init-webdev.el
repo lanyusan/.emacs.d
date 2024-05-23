@@ -47,7 +47,6 @@
 
 ;; Js2Pac
 (use-package js2-mode
-
   :mode ("\\.js\\'" "\\.mjs\\'")
   :interpreter "node"
   :bind (:map js-mode-map ("M-." . nil)))

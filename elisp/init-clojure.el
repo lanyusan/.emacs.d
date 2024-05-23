@@ -10,7 +10,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 5
+;;     Update #: 6
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -46,7 +46,7 @@
 ;;
 ;;; Code:
 
-(setq package-selected-packages '(clojure-mode lsp-mode cider lsp-treemacs flycheck company paredit))
+(setq package-selected-packages '(clojure-mode cider lsp-treemacs flycheck company paredit))
 
 (when (cl-find-if-not #'package-installed-p package-selected-packages)
   (package-refresh-contents)
